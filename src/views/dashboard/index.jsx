@@ -11,7 +11,8 @@ const VirtualInterviewUI = () => {
             <iframe
               title="Interview Video"
               className="embed-responsive-item"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="http://127.0.0.1:5000/ethical_benchmark/"
+              style={{ width: '100%', height: '85vh' }}
               allowFullScreen
             ></iframe>
           </div>
