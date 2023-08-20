@@ -1,20 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css'; // Import your custom styles
 
 const VirtualInterviewUI = () => {
+
+  const messages = [
+    'Welcome to Your Next Interview Experience!',
+    'Embark on an Ethical Interview Journey',
+    'Discover Your Authentic Interview Self',
+    'Unleash Confidence in Every Response',
+    'Wishing You a Stellar Interview Ahead!',
+  ];
+
+  const [messageIndex, setMessageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+    }, 10000); // Change the interval time as needed
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div className="container-fluid vh-100 d-flex flex-column zoom-ui-container">
       <div className="row flex-grow-1">
         <div className="col-9 p-0">
           <div className="embed-responsive embed-responsive-16by9">
-            <iframe
+            {/* <img
               title="Interview Video"
               className="embed-responsive-item"
-              src="http://127.0.0.1:5000/ethical_benchmark/"
+              src="../../assets/svgs/" // Replace with the actual path to your SVG image
               style={{ width: '100%', height: '85vh' }}
-              allowFullScreen
-            ></iframe>
+              alt="Interview Video"
+            /> */}
+            <div style={{ position: 'relative', width: '100%' }}>
+              <img
+                src="https://i.postimg.cc/HWf6NYLf/customer5-1-1.gif"
+                alt=""
+                style={{ width: '100%', height: '85vh' }}
+                className="login-card-img"
+              />
+              <div style={{ animationDuration: '10s' }} className="animated-text">{messages[messageIndex]}</div>
+            </div>
           </div>
         </div>
         <div className="col-3 bg-secondary p-3 text-light">
