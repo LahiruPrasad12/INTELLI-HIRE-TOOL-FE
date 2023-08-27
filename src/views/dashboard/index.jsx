@@ -29,6 +29,13 @@ const VirtualInterviewUI = () => {
       <div className="row flex-grow-1">
         <div className="col-9 p-0">
           <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              title="Interview Video"
+              className="embed-responsive-item"
+              src="http://127.0.0.1:5000/ethical_benchmark/"
+              style={{ width: '100%', height: '85vh' }}
+              allowFullScreen
+            ></iframe>
             {/* <img
               title="Interview Video"
               className="embed-responsive-item"
@@ -36,7 +43,7 @@ const VirtualInterviewUI = () => {
               style={{ width: '100%', height: '85vh' }}
               alt="Interview Video"
             /> */}
-            <div style={{ position: 'relative', width: '100%' }}>
+            {/* <div style={{ position: 'relative', width: '100%' }}>
               <img
                 src="https://i.postimg.cc/HWf6NYLf/customer5-1-1.gif"
                 alt=""
@@ -44,7 +51,7 @@ const VirtualInterviewUI = () => {
                 className="login-card-img"
               />
               <div style={{ animationDuration: '10s' }} className="animated-text">{messages[messageIndex]}</div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="col-3 bg-secondary p-3 text-light">
